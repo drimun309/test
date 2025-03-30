@@ -2,12 +2,12 @@
 import json
 
 # Открываем файл values.json на чтение и загружаем его данные в словарь values_d
-with open("values.json", "r") as a:
-    values_d = json.load(a)
+with open("values.json", "r") as f:
+    values_d = json.load(f)
 
 #открываем файл tests.json и загружаем данные в словарь test_d
-with open("tests.json", "r") as a:
-    test_d = json.load(a)
+with open("tests.json", "r") as f:
+    test_d = json.load(f)
 
 
 # Создаем словарь, где каждому id соответствует его значение 

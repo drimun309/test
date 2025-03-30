@@ -5,9 +5,9 @@ import sys
 file_name = sys.argv[1]  # имя файла передаётся как аргумент
 
 # открываем файл и читаем из него числа
-with open(file_name, 'r') as file: 
+with open(file_name, 'r') as f: 
     nums = []
-    for line in file:
+    for line in f:
         nums.append(int(line.strip()))  # удаляем лишние пробелы и переводим строки в числа
 
 #Находим число, к которому будем приводить все элементы
@@ -20,5 +20,5 @@ moves = 0
 for num in nums:
     moves += abs(num - median)  # считаем разницу каждого числа с медианой и прибавляем её
 
-#Выводим результат на экран
+
 print(moves)
