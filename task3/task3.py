@@ -1,13 +1,16 @@
 #task3
 import json
+import sys
 
-# Открываем файл values.json на чтение и загружаем его данные в словарь values_d
-with open("values.json", "r") as a:
-    values_d = json.load(a)
+values = sys.argv[1]
 
-#открываем файл tests.json и загружаем данные в словарь test_d
-with open("tests.json", "r") as a:
-    test_d = json.load(a)
+tests = sys.argv[2]
+
+with open(values, "r") as f:
+    values_d = json.load(f)
+
+with open(tests, "r") as f:
+    test_d = json.load(f)
 
 
 # Создаем словарь, где каждому id соответствует его значение 

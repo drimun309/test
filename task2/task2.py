@@ -1,30 +1,30 @@
 #task2
-import os
+import sys
 import math
 
 # Путь к файлам (в той же папке)
-circle_path = "circle.txt"
-points_path = "points.txt"
+circle_path = sys.argv[1]
+points_path = sys.argv[2]
 
 # Читаем параметры окружности
-with open(circle_path, 'r') as file:
-    x0, y0 = map(float, file.readline().split())
-    radius = float(file.readline())
+with open(circle_path, 'r') as f:
+    x0, y0 = map(float, f.readline().split())
+    radius = float(f.readline())
 
 # Читаем и обрабатываем точки
-with open(points_path, 'r') as file:
-    lines = file.readlines()
+with open(points_path, 'r') as f:
+    lines = f.readlines()
 
 for line in lines:
     line = line.strip()
     if not line:
         continue
-
+# Вычисляем расстояние от текущей точки до центра окружности
     x, y = map(float, line.split())
     dx = x - x0
     dy = y - y0
     distance = math.sqrt(dx**2 + dy**2)
-
+# Определяем положение точки относительно окружности:
     if math.isclose(distance, radius):
         print(0)
     elif distance < radius:
