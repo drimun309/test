@@ -3,7 +3,6 @@ import json
 import sys
 
 values = sys.argv[1]
-
 tests = sys.argv[2]
 
 with open(values, "r") as f:
@@ -33,4 +32,3 @@ fill_values(test_d["tests"], value_data)
 #Сохраняем обновленные данные в новый файл report.json
 with open("report.json", "w") as f:
     json.dump(test_d, f, indent=2)
-       
